@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # darksidediscs
 
 ## Project setup
@@ -27,3 +28,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# DarkSideDiscs
+>>>>>>> 7130d654fbf4da33ce9f2ea9e42317a709e90232
