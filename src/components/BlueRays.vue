@@ -1,7 +1,8 @@
 <template>
    
        
-         <div   class="row" style= "text-align:center; justify-content:center  ">
+         <div  class="row" style= "text-align:center; justify-content:center  ">
+             
               <app-Item  :item = "item" v-for="item in bluerayItems" :key="item.title"></app-Item>
           </div>
     
