@@ -31,7 +31,7 @@ export default {
 <style>
  
 body  {
-   background: #32373D;
+   background: rgb(185, 22, 41);
     font-family: 'Nunito Sans', sans-serif;
   
   padding: 0;

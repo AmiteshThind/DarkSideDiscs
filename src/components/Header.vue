@@ -1,9 +1,17 @@
 <template>
-<nav class=" navbar navbar-light" style="background:#A3A3A3" >
-<div class="row" style="align-items:center">
-    <img style="margin-left:60px" src="../assets/logo.png"     width="60" height="60" class="d-inline-block align-top">
-    <h1 style="margin-left:1rem;font-size:50px"> <b>DARKSIDE DISCS</b></h1>
-</div>
+<nav class=" navbar navbar-light" style="background:rgb(218, 218, 218);" >
+
+ <div class="container" style="justify-content:center;text-align:center">
+     <div class="row"   >
+ 
+  
+    <h1 class="title" style="margin-left:1rem;margin-right:1rem;font-size:2.5rem;"> <b>DARKSIDE DISCS</b></h1>
+          
+
+    
+  </div>
+     </div>
+    
 </nav>
 </template>
 
@@ -14,10 +22,14 @@ export default {
 </script>
 
 <style>
-h1{
-    font-size: 3.3rem;
-    color: #D41533;
-    
+.title{
+
+  
+  background: -webkit-linear-gradient(#D41533,rgb(0, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+
 }
 .row{
     margin: 0;

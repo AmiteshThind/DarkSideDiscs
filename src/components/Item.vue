@@ -1,6 +1,6 @@
 <template>
  
-<div class="card grow rounded" style="width: 16rem;  ;  margin-right:2rem; margin-bottom:2rem">
+<div class="card grow rounded" style=" width:100%;     margin-bottom:2rem">
   <img :src="require(`../assets/movieImages/${item.img}`)" class=" card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"><b>{{item.title}}</b></h5>
@@ -53,16 +53,16 @@ img {
     object-fit: cover;
 }
 .btn{
-  background:rgb(73, 73, 75);
-  color: #FFFF;
+  background: rgb(218, 218, 218);
+  color: rgb(185, 22, 41);
   margin: 1rem;
   padding: 0.2rem;
-   
+  border: 2px solid rgb(185, 22, 41)
    
 }
 .btn:hover{
-  color :rgb(73, 73, 75);
-  background: #FFFF;
+  color :#000;
+  background: rgb(185, 22, 41);
   
 }
 
@@ -74,7 +74,7 @@ img {
    font-size: 1.3em
  }
  ul{
-   color: rgb(95, 95, 95);
+   color: #000;
  }
  .quantity-input {
     border:0.5px solid rgb(95, 95, 95);
@@ -92,13 +92,16 @@ img {
     
 }
 .card{
-  border:  0 solid #fff;
+  border:  0 solid rgb(228, 215, 215);
   border-radius: 0.5rem;
+  color: #000;
+  background: rgb(204, 204, 204);
 }
 
 .card:hover{
-  background: grey;
+  background: #000;
   transform: scale(1.02);
+  color: rgb(185, 22, 41);
   
 }
  

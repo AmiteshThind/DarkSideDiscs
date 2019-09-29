@@ -1,8 +1,10 @@
 <template>
    
        
-         <div  class="row" style= "text-align:center; justify-content:center  ">
-              <app-Item  :item = "item" v-for="item in dvds" :key="item.title"></app-Item>
+         <div  class="row" style= "text-align:center;">
+             <div class="col-sm-4"  v-for="item in dvds" :key="item.title">
+              <app-Item  :item = "item" ></app-Item>
+             </div>
           </div>
     
  
