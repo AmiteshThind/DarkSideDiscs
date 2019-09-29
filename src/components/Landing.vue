@@ -5,15 +5,25 @@
       <div class="dark-overlay" style="width:100%">
         <div class="landing-inner" style="width:100% ">
             <div class="row" style="width:100%">
-            <div class="col">
+            <div class="col" style="padding:1rem;font-size:3rem">
             <h1 class="text-center" >DARKSIDE DISCS</h1>
             </div>
             </div>
+  
         </div>
+        <div class="row">
+            <div class="col mt-5 mb-3">
         <h2>THE QUALITY IS STRONG WITH THIS ONE</h2>
-        <button type="button" class="btn">Enter the DarkSide</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col ">
+            
+        <button type="button" class="btn">Explore DSDs</button>
+        </div>
         </div>
   </div>
+</div>
 </div>
 </template>
 
@@ -23,7 +33,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .btn{
     color: #A01329;
@@ -31,7 +41,8 @@ export default {
     border: 2px solid #A01329;
 }
 .btn:hover{
-    background: #A01329
+    background: #A01329;
+    color: #000;
 }
 .container-fluid{
     margin: 0;
@@ -39,7 +50,7 @@ export default {
 }
 h1{
     margin: 0.5em;
-    font-size: 5em
+    font-size: 5rem
 }
 h2{
     font-size: 2rem
@@ -47,7 +58,7 @@ h2{
 
 @media(min-width: 400px){
     h1{
-        font-size: 3em;
+        font-size: 3rem;
         margin-top: 3rem;
     }
     h2{
@@ -59,7 +70,7 @@ h2{
 
 @media(min-width: 630px){
     h1{
-        font-size: 4em;
+        font-size: 4rem;
     }
     h2{
         font-size: 1.5rem;
@@ -69,7 +80,7 @@ h2{
 
 @media(min-width: 770px){
     h1{
-        font-size: 5em;
+        font-size: 5rem;
     }
 }
 

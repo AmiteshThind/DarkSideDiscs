@@ -17,10 +17,10 @@ export default {
     components: {
         "app-Item":Item
     },
-    computed:{
-        bluerays(){
-            return this.$store.state.products.bluerays;
+    computed:{ bluerays(){
+        return this.$store.state.products.bluerays;
     }
+
     }
     
 
@@ -28,7 +28,9 @@ export default {
 </script>
 
 <style>
-
+body{
+ overflow-y: auto;
+}
 
 
  </style>

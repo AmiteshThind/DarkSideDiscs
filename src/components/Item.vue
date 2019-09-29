@@ -3,7 +3,7 @@
 <div class="card grow rounded" style="width: 16rem;  ;  margin-right:2rem; margin-bottom:2rem">
   <img :src="require(`../assets/movieImages/${item.img}`)" class=" card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title"><b>STAR WARS V</b></h5>
+    <h5 class="card-title"><b>{{item.title}}</b></h5>
     <h2 style="" class="card-text"><b>{{item.subtitle}}</b></h2>
   </div>
    <span >
@@ -12,8 +12,8 @@
      
    </span>
   <div class="card-body">
-    <button class="btn" style="width:75%">Add to Cart</button>
-  </div>
+    <button class="btn" v-on:click="addItemToCart(item)" style="width:75%">Add to Cart</button>
+  </div>    
 </div>
   
 </template>
@@ -24,12 +24,26 @@ export default {
 
 data : function(){
   return {
-    quantity_options:[1,2,3]
+    
   }
 },
-props:['item']
+props:['item'],
+methods:{
+  addItemToCart:function(item){
+     
+    this.$store.commit('addItemToCart',item);
+  }
+}
 }
 </script>
+
+
+
+
+
+
+
+
 
 <style scoped>
 

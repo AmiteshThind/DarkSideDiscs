@@ -1,58 +1,76 @@
   <template>
- 
+      <li class="list-group-item d-flex justify-content-between align-items-center"
+          style="padding-right:1rem;padding-top:0">
+          <div class="container-fluid" style="padding:0">
               <div class="container-fluid" style="padding:0">
-                  <div class="container-fluid" style="padding:0">
-                      <div class="row">
-                          <div class="col">
-                     <button type="button" class="close is-pulled-right" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
-                      </div>
-                      </div>
-                      <div class="row">
-                          <img src="../../assets/movieImages/SW_VI_BR.png" class="vue-logo">
-                          <div class="media-body" style="margin-left:1.2rem">
-                              <div >
-                              <strong>Star Wars IV</strong>
-                              </div>
-                              <p>Empire Strikes Back (DVD)</p>
-                          </div>
+                  <div class="row">
+                      <div class="col">
+                          <button type="button" @click="removeCartItem(cartItem)" style="margin:0px;padding:0px" class="close is-pulled-right" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
                       </div>
                   </div>
                   <div class="row">
-                      <div class="col">
-                          <div style="margin-top:0.3rem">
-                              <p style="margin-left:1.1rem;"> <strong>Quantity</strong> </p>
-                              <div class="input-group" style="padding-top:0.3rem">
-                                  <input type="button" value="-" class="button-minus" data-field="quantity">
-                                  <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
-                                  <input type="button" value="+" class="button-plus" data-field="quantity">
-
-                              </div>
+                      <img :src="require(`../../assets/movieImages/${cartItem.img}`)" class="vue-logo">
+                      <div class="media-body" style="margin-left:1.2rem">
+                          <div>
+                              <strong>{{cartItem.title}}</strong>
                           </div>
+                          <p>{{cartItem.subtitle}}</p>
+                          <p>({{cartItem.type}})</p>
                       </div>
-                      <div class="col">
-                          <div style="text-align:left;margin-top:5px">
-                              <p> <strong>Price</strong> </p>
-                              <div class="input-group"
-                                  style="justify-content:left;margin-left:5px;padding-top:0.3rem">
-                                  $25
-                              </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                      <div style="margin-top:0.3rem">
+                          <p style="margin-left:1.1rem;"> <strong>Quantity</strong> </p>
+                          <div class="input-group" style="padding-top:0.3rem">
+                              <input type="button" value="-" @click="decrementQuantity(cartItem)" class="button-minus" data-field="quantity">
+                              <input type="number" @keyup:enter="modifyQuantity(e)" step="1" max="" :value="cartItem.quantity" name="quantity" class="quantity-field">
+                              <input type="button" value="+" @click="incrementQuantity(cartItem)" class="button-plus" data-field="quantity">
+
                           </div>
                       </div>
                   </div>
-   
-      </div>
+                  <div class="col">
+                      <div style="text-align:left;margin-top:5px">
+                          <p> <strong>Price</strong> </p>
+                          <div class="input-group" style="justify-content:left;margin-left:5px;padding-top:0.3rem">
+                              ${{cartItem.totalPrice}}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </li>
   </template>
 
 
   <script>
       export default {
-
+          props:['cartItem'],
+          methods:{
+              incrementQuantity:function(cartItem){
+                  this.$store.commit('incrementQuantity',cartItem);
+              },
+              decrementQuantity:function(cartItem){
+                  this.$store.commit('decrementQuantity',cartItem);
+              },
+              removeCartItem:function(cartItem){
+                  this.$store.commit('removeCartItem',cartItem);
+              },
+              modifyQuantity: function(cartItem,e){
+                  this.$store.commit('modifyQuantity',cartItem,e);
+              }
+              
+          }
       }
   </script>
 
   <style>
+  button:focus {outline:0;}
       .vue-logo {
           height: 80px;
           width: 100px;
