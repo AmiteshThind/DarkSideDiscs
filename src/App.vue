@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" >
 
-<app-dashboard  :mockData="mockData"></app-dashboard>
+<app-dashboard></app-dashboard>
   </div>
 </template>
 
@@ -43,13 +43,25 @@ export default {
 <style>
 
 body  {
-   background: #353535;
+   background: #32373D;
     font-family: 'Nunito Sans', sans-serif;
   
   padding: 0;
   margin: 0;
   width: 100%;
   min-height: 100%;  
+}
+
+::-webkit-scrollbar {
+  background: #CCF6ED;
+  border-radius: 4px;
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 4px;
 }
 
 </style>

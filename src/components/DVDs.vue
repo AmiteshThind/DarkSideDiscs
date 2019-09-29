@@ -2,7 +2,7 @@
    
        
          <div  class="row" style= "text-align:center; justify-content:center  ">
-              <app-Item  :item = "item" v-for="item in bluerays" :key="item.title"></app-Item>
+              <app-Item  :item = "item" v-for="item in dvds" :key="item.title"></app-Item>
           </div>
     
  
@@ -13,13 +13,13 @@
 import Item from "../components/Item"
 export default {
 
-     
+    
     components: {
         "app-Item":Item
     },
     computed:{
-        bluerays(){
-            return this.$store.state.products.bluerays;
+        dvds(){
+            return this.$store.state.products.DVDs;
     }
     }
     
@@ -28,7 +28,6 @@ export default {
 </script>
 
 <style>
-
 
 
  </style>
