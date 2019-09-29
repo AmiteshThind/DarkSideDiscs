@@ -15,7 +15,7 @@ export const store = new Vuex.Store({
           quantity: 0,
           totalPrice: 0,
           img: "SW_IV_BR.png",
-          type: "BluRay"
+          type: "BlueRay"
         },
         {
           id: 2,
@@ -25,7 +25,7 @@ export const store = new Vuex.Store({
           quantity: 0,
           totalPrice: 0,
           img: "SW_V_BR.png",
-          type: "BluRay"
+          type: "BlueRay"
         },
         {
           id: 3,
@@ -35,7 +35,7 @@ export const store = new Vuex.Store({
           quantity: 0,
           totalPrice: 0,
           img: "SW_VI_BR.png",
-          type: "BluRay"
+          type: "BlueRay"
         }
       ],
       DVDs: [

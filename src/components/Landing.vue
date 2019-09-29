@@ -1,12 +1,12 @@
 <template>
-<div class="container-fluid">
+<div class="container-fluid" >
   <div class="landing">
       
       <div class="dark-overlay" style="width:100%">
         <div class="landing-inner" style="width:100% ">
             <div class="row" style="width:100%">
-            <div class="col" style="padding:1rem;font-size:3rem">
-            <h1 class="text-center" >DARKSIDE DISCS</h1>
+            <div class="col" style="margin:1rem;font-size:3rem">
+            <h1 class="text-center" style="margin:2rem" >DARKSIDE DISCS</h1>
             </div>
             </div>
   
@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col ">
             
-        <button type="button" class="btn">Explore DSDs</button>
+        <button type="button" class="btn"> <router-link to="/dashboard">Explore DSDs</router-link></button>
         </div>
         </div>
   </div>
@@ -34,7 +34,11 @@ export default {
 </script>
 
 <style scoped>
-
+a { color: inherit;
+ }
+ a:hover{
+     color:inherit;
+ } 
 .btn{
     color: #A01329;
     background: #000;
@@ -117,9 +121,5 @@ button{
    
 }
 
-.button:focus
-{
-    font-size: 13px;
-    color:orange;
-}
+ 
 </style>
