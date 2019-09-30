@@ -2,12 +2,16 @@
 
     <div>
         <app-header></app-header>
+        
         <div class="container">
             <div class="row">
+                
                 <div class="col-sm-8 center-content">
+                      <app-discount-notification></app-discount-notification>
                     <app-product-list></app-product-list>
                 </div>
                 <div class="col-sm-4">
+                    
                     <h1 class="cart-title">
                         <b>Cart</b></h1>
                     <div class="row">
@@ -21,16 +25,18 @@
 </template>
 
 <script>
-
+ 
     import Header from "./Header";
     import ProductList from "./Products/ProductList";
-    import ShoppingCart from "./ShoppingCart/ShoppingCart"
+    import ShoppingCart from "./ShoppingCart/ShoppingCart";
+    import DiscountNotification from "./ShoppingCart/DiscountNotification";
 
     export default {
         components: {
             "app-header": Header,
             "app-product-list": ProductList,
-            "app-shopping-cart": ShoppingCart
+            "app-shopping-cart": ShoppingCart,
+            "app-discount-notification": DiscountNotification
         }
     }
 

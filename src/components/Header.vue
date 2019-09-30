@@ -4,6 +4,7 @@
     <div class="container" style="justify-content:center;text-align:center">
       <div class="row">
         <h1 class="title" style="margin-left:1rem;margin-right:1rem;font-size:2.5rem;"> <b>DARKSIDE DISCS</b></h1>
+         
       </div>
     </div>
   </nav>
