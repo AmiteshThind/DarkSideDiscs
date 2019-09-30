@@ -16,8 +16,8 @@ Project is created with:
 	
 ## Setup
 To run this project, install it locally using npm.
-Make Sure to be in the DarkSideDiscs folder before running npm install
-Once **npm install** has complleted downloading the dependcies you must run 
+Make Sure to be in the DarkSideDiscs folder before running npm install.
+Once **npm install** has completed installing the dependencies you must run 
 **npm run serve** to run the project on your local network.
 
 ```
