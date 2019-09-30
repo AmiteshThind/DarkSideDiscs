@@ -1,42 +1,30 @@
 <template>
   <div id="app">
-
-
-    <transition name="router-anim" enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutDown">
+    <transition name="router-anim" enter-active-class="animated fadeInDown">
       <router-view></router-view>
     </transition>
-
   </div>
 </template>
 
 <script>
-  //import Landing from "./components/Landing";
-
-  import Dashboard from "./components/Dashboard";
-  import Landing from "./components/Landing";
-
+ 
+ 
   export default {
-    name: 'app',
-    components: {
-      "app-landing-page": Landing,
-
-      "app-dashboard": Dashboard,
-
-    },
-    data: function () {
-      return {}
-    }
+    name: 'app'
   }
 </script>
 
 <style>
  
-  @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css";
+ @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+ @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css";
 
   .fade-enter-active,
   .fade-leave-active {
     transition: opacity .5s;
   }
+
+  
 
   .fade-enter,
   .fade-leave-to
@@ -45,16 +33,23 @@
     {
     opacity: 0;
   }
+ 
 
-  body {
-    background: rgb(185, 22, 41);
+  html, body {
+  font-family: 'Nunito Sans', sans-serif;
+    background-image: linear-gradient(rgb(235, 76, 76), rgb(41, 41, 41));
     font-family: 'Nunito Sans', sans-serif;
     overflow-y: hidden;
     padding: 0;
     margin: 0;
     width: 100%;
-    min-height: 100%;
-  }
+    height: 100%;
+    min-height: 100vh;
+}
+
+#app {
+  font-family: 'Nunito Sans', sans-serif;
+}
 
   ::-webkit-scrollbar {
     background: #CCF6ED;

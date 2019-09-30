@@ -1,39 +1,39 @@
 <template>
-<div class="container-fluid" >
-  <div class="landing">
-      
-      <div class="dark-overlay" style="width:100%">
-        <div class="landing-inner" style="width:100% ">
-            <div class="row" style="width:100%">
-            <div class="col" style="margin:1rem;font-size:3rem">
-            <h1 class="text-center" style="margin:2rem" >DARKSIDE DISCS</h1>
+<div class="container-fluid">
+    <div class="landing">
+        <div class="dark-overlay" >
+            <div class="landing-inner">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="text-margin">DARKSIDE DISCS</h1>
+                    </div>
+                </div>
             </div>
+            <div class="row">
+                <div class="col mt-5 mb-3">
+                    <h2>THE QUALITY IS STRONG WITH THIS ONE</h2>
+                </div>
             </div>
-  
-        </div>
-        <div class="row">
-            <div class="col mt-5 mb-3">
-        <h2>THE QUALITY IS STRONG WITH THIS ONE</h2>
+            <div class="row">
+                <div class="col ">
+                    <button type="button" class="btn">
+                        <router-link to="/dashboard">Explore DSDs</router-link>
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col ">
-            
-        <button type="button" class="btn"> <router-link to="/dashboard">Explore DSDs</router-link></button>
-        </div>
-        </div>
-  </div>
-</div>
+    </div>
 </div>
 </template>
 
 <script>
 export default {
-
 }
 </script>
 
 <style scoped>
+
+
 a { color: inherit;
  }
  a:hover{
@@ -104,13 +104,16 @@ h2{
     align-items: center;
 
 }
+.text-margin{
+    margin:2rem;
+}
 .dark-overlay{
     color:#7C7C83;
     height: 100%;
     display: flex;
     flex-direction: column;
-    width: 80%;
     margin: auto;
+    width:100%;
     padding-bottom: 5rem;
     text-align: center;
     align-items: center;
@@ -118,8 +121,13 @@ h2{
 }
 button{
     margin-top: 2rem;
-   
+}
+.row{
+    width:100%
+}
+.col{
+    margin:1rem;
+    font-size:3rem
 }
 
- 
 </style>

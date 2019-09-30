@@ -6,8 +6,7 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     products: {
-      bluerays: [
-        {
+      bluerays: [{
           id: 1,
           title: "Star Wars IV",
           subtitle: "A New Hope",
@@ -15,7 +14,7 @@ export const store = new Vuex.Store({
           quantity: 0,
           totalPrice: 0,
           img: "SW_IV_BR.png",
-          type: "BlueRay"
+          type: "BluRay"
         },
         {
           id: 2,
@@ -25,7 +24,7 @@ export const store = new Vuex.Store({
           quantity: 0,
           totalPrice: 0,
           img: "SW_V_BR.png",
-          type: "BlueRay"
+          type: "BluRay"
         },
         {
           id: 3,
@@ -35,11 +34,10 @@ export const store = new Vuex.Store({
           quantity: 0,
           totalPrice: 0,
           img: "SW_VI_BR.png",
-          type: "BlueRay"
+          type: "BluRay"
         }
       ],
-      DVDs: [
-        {
+      DVDs: [{
           id: 4,
           title: "Star Wars IV",
           subtitle: "A New Hope",
@@ -70,52 +68,56 @@ export const store = new Vuex.Store({
           type: "DVD"
         }
       ],
-      blueraysCount: 0,
-      DVDsCount: 0,
-      applyBulkDiscount: false,
-      applyDiscountOnBlueray: false,
-      applyDiscountOnDVD: false
+      uniqueBluRaysCount: 0,
+      uniqueDVDsCount: 0,
+      applyBulkDiscount: false
+ 
     },
     cart: []
   },
   mutations: {
     addItemToCart: (state, item) => {
       let found = state.cart.find(product => product.id == item.id);
+
+      //if item exists in cart incremnts its quanity and update the total price
       if (found) {
         found.quantity++;
-        if (found.type == "BlueRay") {
-          if (state.products.blueraysCount == 3) {
+        if (found.type == "BluRay") {
+          if (state.products.uniqueBluRaysCount == 3) {
             found.totalPrice =
               found.totalPrice + item.price - found.price * 0.15;
           } else {
             found.totalPrice = found.price * found.quantity;
           }
         } else if (found.type == "DVD") {
-          if (state.products.DVDsCount == 3) {
+          if (state.products.uniqueDVDsCount == 3) {
             found.totalPrice =
               found.totalPrice + item.price - found.price * 0.1;
           } else {
             found.totalPrice = found.price * found.quantity;
           }
         }
+        // add item to cart and increment either uniqueBlueRayCounter or uniqueDVDCounter
+        // depending on type of item being added
       } else {
         state.cart.push(item);
         Vue.set(item, "quantity", 1);
         Vue.set(item, "totalPrice", item.price);
-        if (item.type == "BlueRay") {
-          state.products.blueraysCount++;
-          if (state.products.blueraysCount === 3) {
-            state.applyBlueRaysDiscount = true;
+        if (item.type == "BluRay") {
+          state.products.uniqueBluRaysCount++;
+          if (state.products.uniqueBluRaysCount === 3) {
+            found.totalPrice =
+              found.totalPrice + item.price - found.price * 0.15;
           } else {
-            state.applyBlueRaysDiscount = false;
+
             item.totalPrice = item.price * item.quantity;
           }
         } else if (item.type == "DVD") {
-          state.products.DVDsCount++;
-          if (state.products.DVDsCount === 3) {
-            state.applyDVDsDiscount = true;
+          state.products.uniqueDVDsCount++;
+          if (state.products.uniqueDVDsCount === 3) {
+            found.totalPrice =
+              found.totalPrice + item.price - found.price * 0.1;
           } else {
-            state.applyDVDsDiscount = false;
             item.totalPrice = item.price * item.quantity;
           }
         }
@@ -124,59 +126,75 @@ export const store = new Vuex.Store({
     incrementQuantity: (state, cartItem) => {
       let cartItemIndex = state.cart.indexOf(cartItem);
       let item = state.cart[cartItemIndex];
+
       item.quantity++;
-      if (item.type == "DVD") {
-        if (state.products.DVDsCount == 3) {
+
+
+      //increment quantity and check to see if discount needs to be applied or not for DVD
+      if (item.type === "DVD") {
+        if (state.products.uniqueDVDsCount == 3) {
           item.totalPrice += item.price - item.price * 0.1;
         } else {
-            state.products.DVDsCount++;
+          let found = state.cart.find(product => product.id == item.id);
+          if (!found || item.quantity == 1) {
+            state.products.uniqueDVDsCount++;
+          }
           item.totalPrice += item.price;
         }
-      } else if (item.type == "BlueRay") {
-        if (state.products.blueraysCount == 3) {
+        //increment quantity and check to see if discount needs to be applied or not for BluRay
+      } else if (item.type === "BluRay") {
+        if (state.products.uniqueBluRaysCount == 3) {
           item.totalPrice += item.price - item.price * 0.15;
         } else {
-            state.products.blueraysCount++;
+          let found = state.cart.find(product => product.id == item.id);
+          if (!found || item.quantity == 1) {
+            state.products.uniqueBluRaysCount++;
+          }
           item.totalPrice += item.price;
         }
       }
+     
+
     },
     decrementQuantity: (state, cartItem) => {
       let cartItemIndex = state.cart.indexOf(cartItem);
       let item = state.cart[cartItemIndex];
+      //increment quantity and check to see if discount needs to be applied or not for DVD
       if (item.quantity > 1) {
         item.quantity--;
-        if (item.type == "BlueRay") {
-          if (state.products.blueraysCount == 3) {
+        if (item.type == "BluRay") {
+          if (state.products.uniqueBluRaysCount === 3) {
             item.totalPrice -= item.price - 0.15 * item.price;
           } else {
             item.totalPrice -= item.price;
           }
         } else if (item.type == "DVD") {
-          if (state.products.DVDsCount == 3) {
+          if (state.products.uniqueDVDsCount == 3) {
             item.totalPrice -= item.price - 0.1 * item.price;
+
           } else {
             item.totalPrice -= item.price;
+
           }
         }
-      } else {
-          item.quantity=0;
+      } else if (item.quantity == 1) {
+        item.quantity = 0;
         item.totalPrice = 0;
-        if(item.type=="BlueRay"){
-            state.products.blueraysCount--;
-        }
-        else{
-            state.products.DVDsCount--;
+        if (item.type === "BluRay") {
+          state.products.uniqueBluRaysCount--;
+
+        } else {
+          state.products.uniqueDVDsCount--;
         }
       }
     },
     removeCartItem: (state, cartItem) => {
       let cartItemIndex = state.cart.indexOf(cartItem);
 
-      if (state.cart[cartItemIndex].type == "BlueRay") {
-        state.products.blueraysCount--;
+      if (state.cart[cartItemIndex].type === "BluRay") {
+        state.products.uniqueBluRaysCount--;
       } else {
-        state.products.DVDsCount--;
+        state.products.uniqueDVDsCount--;
       }
       state.cart.splice(cartItemIndex, 1);
     }
