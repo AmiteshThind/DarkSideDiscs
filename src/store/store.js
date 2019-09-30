@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     products: {
-      bluerays: [{
+      blurays: [{
           id: 1,
           title: "Star Wars IV",
           subtitle: "A New Hope",

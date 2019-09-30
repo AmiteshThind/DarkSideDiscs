@@ -4,14 +4,14 @@
         <app-cart-item :cartItem="cartItem" v-for="cartItem in this.$store.state.cart" :key="cartItem.id">
         </app-cart-item>
         <li class="list-group-item d-flex justify-content-between align-items-center"
-            v-if="applyDiscountOnBluerays || applyDiscountOnDVDs">
+            v-if="applyDiscountOnBlurays || applyDiscountOnDVDs">
             <div class="row">
                 <div class="col-5">
                     <strong class="align-heading">Discount</strong>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12" v-if="applyDiscountOnBluerays">
+                <div class="col-sm-12" v-if="applyDiscountOnBlurays">
                     <span>15% OFF All BluRays</span>
                 </div>
                 <div class="col-12" v-if="this.applyDiscountOnDVD">
@@ -41,7 +41,7 @@
     export default {
         data: function () {
             return {
-                applyDiscountOnBlueray: false,
+                applyDiscountOnBluray: false,
                 applyDiscountOnDVD: false,
                
             }
@@ -76,25 +76,25 @@
                 return parseFloat(total).toFixed(2);
             },
 
-            applyDiscountOnBluerays: function () {
+            applyDiscountOnBlurays: function () {
                 let vm = this;
                  //check to see if atleast each type of bluray is in the cart 
                 // if true apply discount to each item
                 if (vm.$store.state.products.uniqueBluRaysCount == 3) {
-                    if (!vm.applyDiscountOnBlueray) {
-                        let blueRayItems = this.$store.state.cart.filter(item => (item.type == "BluRay"));
-                        blueRayItems.forEach(item => (item.totalPrice = item.totalPrice - (0.15 * item.totalPrice)));
+                    if (!vm.applyDiscountOnBluray) {
+                        let bluRayItems = this.$store.state.cart.filter(item => (item.type == "BluRay"));
+                        bluRayItems.forEach(item => (item.totalPrice = item.totalPrice - (0.15 * item.totalPrice)));
                     }
-                    vm.applyDiscountOnBlueray = true;
+                    vm.applyDiscountOnBluray = true;
             
                 } else if (this.$store.state.products.uniqueBluRaysCount < 3) {
-                    if (this.applyDiscountOnBlueray == true) {
-                        let blueRayItems = this.$store.state.cart.filter(item => (item.type == "BluRay"));
-                        blueRayItems.forEach(item => (item.totalPrice = item.price * item.quantity));
+                    if (this.applyDiscountOnBluray == true) {
+                        let bluRayItems = this.$store.state.cart.filter(item => (item.type == "BluRay"));
+                        bluRayItems.forEach(item => (item.totalPrice = item.price * item.quantity));
                     }
-                    vm.applyDiscountOnBlueray = false;
+                    vm.applyDiscountOnBluray = false;
                 }
-                return vm.applyDiscountOnBlueray;
+                return vm.applyDiscountOnBluray;
             },
 
             applyDiscountOnDVDs: function () {

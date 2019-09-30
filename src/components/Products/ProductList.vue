@@ -6,9 +6,9 @@
         <div class="row remove-margin-padding">
             <app-dvds></app-dvds>
         </div>
-        <h1 class="blueray-title"><b>BluRay</b></h1>
+        <h1 class="bluray-title"><b>BluRay</b></h1>
         <div class="row">
-            <app-bluerays></app-bluerays>
+            <app-blurays></app-blurays>
         </div>
     </div>
 
@@ -16,13 +16,13 @@
 
 <script>
 
-import BlueRays from "./BlueRays";
+import BluRays from "./BluRays";
 import DVDs from "./DVDs";
 
 export default {
     components: {
 
-        "app-bluerays": BlueRays,
+        "app-blurays": BluRays,
         "app-dvds": DVDs
 
     }
@@ -46,7 +46,7 @@ export default {
     margin-left: 1rem;
 }
 
-.blueray-title {
+.bluray-title {
     text-align: left;
     color: #000;
     margin-bottom: 1rem;
