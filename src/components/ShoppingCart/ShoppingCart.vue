@@ -48,13 +48,8 @@
         },
         methods: {
             checkout: function () {
-                let validCheckout = false;
-                validCheckout = this.$store.state.cart.forEach(item => {
-                    if (item.quantity >= 0) {
-                        return true;
-                    }
-                })
-
+               
+               //check to see if checkout is valid 
                 if (this.$store.state.products.uniqueBluRaysCount > 0 || this.$store.state.products.uniqueDVDsCount > 0) {
                     alert("Thanks for Shopping With DarkSide Discs. Hope you enjoy your DSD's");
                 } else {
@@ -128,11 +123,9 @@
                 let totalQuantity = 0;
                 vm.$store.state.cart.forEach(item => {
                     totalQuantity += item.quantity;
-                })
-                console.log(totalQuantity);
+                });
                 if (vm.$store.state.products.uniqueBluRaysCount == 3 && vm.$store.state.products.uniqueDVDsCount == 3) {
                     if (totalQuantity >= 100) {
-                        console.log('here');
                         vm.$store.state.products.applyBulkDiscount = true;
                     } else {
                         vm.$store.state.products.applyBulkDiscount = false;
