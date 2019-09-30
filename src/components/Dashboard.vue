@@ -1,11 +1,8 @@
 <template>
-
     <div>
         <app-header></app-header>
-        
         <div class="container">
-            <div class="row">
-                
+            <div class="row">    
                 <div class="col-sm-8 center-content">
                       <app-discount-notification></app-discount-notification>
                     <app-product-list></app-product-list>
@@ -21,11 +18,9 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
- 
     import Header from "./Header";
     import ProductList from "./Products/ProductList";
     import ShoppingCart from "./ShoppingCart/ShoppingCart";
@@ -39,11 +34,9 @@
             "app-discount-notification": DiscountNotification
         }
     }
-
 </script>
 
 <style>
-
     .center-content {
         justify-content: center;
     }
@@ -60,5 +53,4 @@
         font-size: 2rem;
         color: #000;
     }
-
 </style>

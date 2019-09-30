@@ -7,7 +7,6 @@
 </template>
 
 <script>
-
 import Item from "./Item";
 
 export default {
@@ -23,9 +22,7 @@ export default {
 </script>
 
 <style>
-
 .center-text{
     text-align: center;
 }
-
  </style>

@@ -1,5 +1,4 @@
 <template>
-
     <div>
         <h1 class="dvd-title">
             <b>DVD</b></h1>
@@ -11,11 +10,9 @@
             <app-blurays></app-blurays>
         </div>
     </div>
-
 </template>
 
 <script>
-
 import BluRays from "./BluRays";
 import DVDs from "./DVDs";
 
@@ -27,11 +24,9 @@ export default {
 
     }
 }
-
 </script>
 
 <style >
-
 .remove-margin-padding{
     margin:0;
     padding:0
@@ -53,5 +48,4 @@ export default {
     font-size: 2rem;
     margin-left: 1rem
 }
- 
 </style>

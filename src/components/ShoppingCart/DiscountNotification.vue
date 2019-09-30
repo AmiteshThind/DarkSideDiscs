@@ -10,7 +10,6 @@
                 <b-button class="mb-2 mt-2 btn btn-discount">Buy One More BluRay to get a Discount</b-button>
             </div>
         </transition>
-
     </div>
 </template>
 
@@ -21,7 +20,6 @@ export default {
 </script>
 
 <style>
-
 .btn-discount {
     background: rgb(36, 34, 34);
 
@@ -43,6 +41,4 @@ export default {
     {
     opacity: 0;
 }
- 
-
 </style>

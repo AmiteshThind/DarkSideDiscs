@@ -1,5 +1,4 @@
   <template>
-  
       <li class="list-group-item d-flex justify-content-between align-items-center align">
           <div class="container-fluid" >
               <div class="container-fluid">
@@ -48,12 +47,10 @@
 
           </div>
       </li>
-
   </template>
 
 
   <script>
-
       export default {
           props:['cartItem'],
           methods:{
@@ -72,11 +69,9 @@
               
           }
       }
-
   </script>
 
   <style>
-
   button:focus {
       outline: 0;
   }

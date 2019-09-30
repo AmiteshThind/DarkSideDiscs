@@ -1,29 +1,29 @@
 <template>
-<div class="container-fluid">
-    <div class="landing">
-        <div class="dark-overlay" >
-            <div class="landing-inner">
-                <div class="row">
-                    <div class="col">
-                        <h1 class="text-margin">DARKSIDE DISCS</h1>
+    <div class="container-fluid">
+        <div class="landing">
+            <div class="dark-overlay" >
+                <div class="landing-inner">
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="text-margin">DARKSIDE DISCS</h1>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col mt-5 mb-3">
-                    <h2>THE QUALITY IS STRONG WITH THIS ONE</h2>
+                <div class="row">
+                    <div class="col mt-5 mb-3">
+                        <h2>THE QUALITY IS STRONG WITH THIS ONE</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col ">
-                    <button type="button" class="btn">
-                        <router-link to="/dashboard">Explore DSDs</router-link>
-                    </button>
+                <div class="row">
+                    <div class="col ">
+                        <button type="button" class="btn">
+                            <router-link to="/dashboard">Explore DSDs</router-link>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </template>
 
 <script>
@@ -32,8 +32,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 a { color: inherit;
  }
  a:hover{
@@ -129,5 +127,4 @@ button{
     margin:1rem;
     font-size:3rem
 }
-
 </style>

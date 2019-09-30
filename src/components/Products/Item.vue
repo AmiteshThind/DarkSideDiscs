@@ -1,5 +1,4 @@
 <template>
-
   <div class="card grow rounded">
     <img :src="require(`../../assets/movieImages/${item.img}`)" class=" card-img-top" :alt="item.title">
     <div class="card-body">
@@ -13,12 +12,10 @@
       <button class="btn" v-on:click="addItemToCart(item)">Add to Cart</button>
     </div>
   </div>
-
 </template>
 
 
 <script>
-
 export default {
   props: ['item'],
   methods: {
@@ -27,12 +24,10 @@ export default {
     }
   }
 } 
-
 </script>
 
 
 <style scoped>
-
 img {
   width: 100%;
   height: 12vw;
@@ -191,5 +186,4 @@ input[type="number"] {
   -moz-appearance: textfield;
   -webkit-appearance: none;
 }
-
 </style>

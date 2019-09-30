@@ -1,5 +1,4 @@
 <template>
-
     <ul class="list-group">
         <app-cart-item :cartItem="cartItem" v-for="cartItem in this.$store.state.cart" :key="cartItem.id">
         </app-cart-item>
@@ -32,7 +31,6 @@
         </li>
         <button class="btn checkout" @click="checkout">Checkout</button>
     </ul>
-
 </template>
 
 
@@ -124,6 +122,8 @@
                 vm.$store.state.cart.forEach(item => {
                     totalQuantity += item.quantity;
                 });
+                //if everytype of DVD and BluRay copy are in the cart and if quantity is greater or equal to 100
+                // set applyBulkDiscount to true   
                 if (vm.$store.state.products.uniqueBluRaysCount == 3 && vm.$store.state.products.uniqueDVDsCount == 3) {
                     if (totalQuantity >= 100) {
                         vm.$store.state.products.applyBulkDiscount = true;
@@ -141,7 +141,6 @@
 </script>
 
 <style>
-
 .list-group-item {
     background: rgb(218, 218, 218);
 }
@@ -167,5 +166,4 @@
 .align-subheading{
     margin-left:0.2rem;
 }
- 
 </style>
