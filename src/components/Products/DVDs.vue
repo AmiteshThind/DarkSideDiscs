@@ -1,11 +1,9 @@
 <template>
-
     <div class="row center-text">
         <div class="col-sm-4" v-for="item in dvds" :key="item.title">
             <app-Item :item="item"></app-Item>
         </div>
     </div>
-
 </template>
 
 <script>
