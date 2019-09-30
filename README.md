@@ -15,9 +15,9 @@ Project is created with:
 * BootStrap
 	
 ## Setup
-To run this project, install it locally using npm.
-Make Sure to be in the darksidediscs folder before running npm install.
-Once **npm install** has completed installing the dependencies you must run 
+To get this project up and running, install it locally using npm.
+Make Sure to be in the darksidediscs folder before running **npm install**.
+Once **npm install** has completed installing the dependencies, you must run 
 **npm run serve** to run the project on your local network.
 
 ```
